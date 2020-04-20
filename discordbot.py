@@ -20,7 +20,8 @@ async def on_message(message):
             return
         else:
             try:
-                num = int(mesasge.content)
+                k = message.content
+                num = int(k)
             except:
                 await channel.send("半角自然数を入力してください")
             if sympy.isprime(num*10 + 1) and sympy.isprime(num*10 +3) and sympy.isprime(num*10 +7) and sympy.isprime(num*10 +9):
