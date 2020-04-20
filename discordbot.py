@@ -15,7 +15,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     channel = client.get_channel(701731552094060645)
-    if message.channel.name == "4つ子素数判定":
+    if message.channel.name == "4つ子素数テスト":
         if message.author.bot:
             return
         else:
@@ -23,7 +23,7 @@ async def on_message(message):
                 num = int(mesasge.content)
             except:
                 await channel.send("半角自然数を入力してください")
-            if sympy.isprime(num) and sympy.isprime(num + 2) and sympy.isprime(num + 6) and sympy.isprime(num + 8):
+            if sympy.isprime(num*10 + 1) and sympy.isprime(num*10 +3) and sympy.isprime(num*10 +7) and sympy.isprime(num*10 +9):
                 await channel.send(str(num) + "は4つ子素数です")
             else:
                 await channel.send("4つ子素数ではありません")
